@@ -1,24 +1,12 @@
-# Gradle
-build
+.classpath
 .gradle
-
-.DS_Store
-
-# Minecraft
-run
-
-# IntelliJ
+.idea
+.project
+.settings
+bin
+build
+eclipse
 out
-.idea/
 *.iml
 *.ipr
 *.iws
-
-# Keystore
-keystore/*
-
-# Decomp
-decomp/*
-
-libs/*.jar
-*~
