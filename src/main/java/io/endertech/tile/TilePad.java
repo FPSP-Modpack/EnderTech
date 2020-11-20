@@ -1,5 +1,8 @@
 package io.endertech.tile;
 
+import java.awt.Color;
+import java.util.Random;
+
 import cofh.api.energy.IEnergyContainerItem;
 import cofh.api.energy.IEnergyHandler;
 import cofh.api.tileentity.IReconfigurableFacing;
@@ -25,8 +28,6 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.IIcon;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.awt.*;
-import java.util.Random;
 
 public abstract class TilePad extends TileInventory implements IReconfigurableFacing, IEnergyHandler, IOutlineDrawer, IChargeableFromSlot
 {
@@ -44,7 +45,8 @@ public abstract class TilePad extends TileInventory implements IReconfigurableFa
         this.inventory = new ItemStack[INVENTORY_SIZE];
     }
 
-    public String getName()
+    @Override
+	public String getName()
     {
         Block block = this.worldObj.getBlock(this.xCoord, this.yCoord, this.zCoord);
         int blockMeta = this.worldObj.getBlockMetadata(this.xCoord, this.yCoord, this.zCoord);
@@ -218,14 +220,17 @@ public abstract class TilePad extends TileInventory implements IReconfigurableFa
         return true;
     }
 
-    public int getChargeSlot()
+    @Override
+	public int getChargeSlot()
     {
         return this.inventory.length - 1;
     }
 
-    public boolean hasChargeSlot() { return true; }
+    @Override
+	public boolean hasChargeSlot() { return true; }
 
-    public void chargeFromGUISlot()
+    @Override
+	public void chargeFromGUISlot()
     {
         if (this.isCreative) return;
 

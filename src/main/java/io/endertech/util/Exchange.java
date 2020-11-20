@@ -1,14 +1,19 @@
 package io.endertech.util;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import io.endertech.item.ItemExchanger;
 import io.endertech.util.helper.BlockHelper;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockFence;
+import net.minecraft.block.BlockFenceGate;
+import net.minecraft.block.BlockRedstoneLight;
+import net.minecraft.block.BlockTorch;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Exchange
 {

@@ -7,7 +7,6 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import io.endertech.EnderTech;
 import io.endertech.block.ETBlocks;
 import io.endertech.client.handler.DrawBlockHighlightEventHandler;
 import io.endertech.client.handler.KeyBindingHandler;
@@ -54,7 +53,8 @@ public class ClientProxy extends CommonProxy
         RenderingRegistry.registerBlockHandler(new ConnectedTextureRenderer());
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     @SubscribeEvent
     public void registerIcons(TextureStitchEvent.Pre event)
     {

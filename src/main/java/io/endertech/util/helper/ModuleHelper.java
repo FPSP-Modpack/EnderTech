@@ -2,8 +2,6 @@ package io.endertech.util.helper;
 
 //import io.drakon.pulsar.control.PulseManager;
 import io.endertech.EnderTech;
-import io.endertech.modules.dev.DevEnvironmentPulse;
-import static io.endertech.reference.Reference.MOD_ID;
 
 /**
  * Helper to connect to Project Pulsar.

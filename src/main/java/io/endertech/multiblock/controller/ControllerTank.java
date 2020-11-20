@@ -1,10 +1,17 @@
 package io.endertech.multiblock.controller;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
+import com.google.common.math.IntMath;
+
 import cofh.api.energy.IEnergyContainerItem;
 import cofh.api.energy.IEnergyStorage;
 import cofh.lib.util.helpers.EnergyHelper;
 import cofh.lib.util.helpers.ServerHelper;
-import com.google.common.math.IntMath;
 import io.endertech.config.GeneralConfig;
 import io.endertech.multiblock.IMultiblockPart;
 import io.endertech.multiblock.MultiblockControllerBase;
@@ -21,7 +28,12 @@ import io.endertech.util.BlockCoord;
 import io.endertech.util.IChargeableFromSlot;
 import io.endertech.util.IOutlineDrawer;
 import io.endertech.util.RGBA;
-import io.endertech.util.helper.*;
+import io.endertech.util.helper.LocalisationHelper;
+import io.endertech.util.helper.LogHelper;
+import io.endertech.util.helper.NBTHelper;
+import io.endertech.util.helper.RenderHelper;
+import io.endertech.util.helper.StringHelper;
+import io.endertech.util.helper.WorldHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -35,7 +47,6 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
-import java.util.*;
 
 public class ControllerTank extends RectangularMultiblockControllerBase implements IOutlineDrawer, ITilePacketHandler, IEnergyStorage, IChargeableFromSlot, IInventory
 {
@@ -139,12 +150,12 @@ public class ControllerTank extends RectangularMultiblockControllerBase implemen
 
         if (oldPart instanceof TileTankValve)
         {
-            attachedValves.remove((TileTankValve) oldPart);
+            attachedValves.remove(oldPart);
         }
 
         if (oldPart instanceof TileTankEnergyInput)
         {
-            attachedEnergyInputs.remove((TileTankEnergyInput) oldPart);
+            attachedEnergyInputs.remove(oldPart);
         }
     }
 
@@ -374,7 +385,8 @@ public class ControllerTank extends RectangularMultiblockControllerBase implemen
         //        LogHelper.info("Writing tank to NBT: " + this.toString());
     }
 
-    public String toString()
+    @Override
+	public String toString()
     {
         return "R: " + this.getRandomNumber() + " A: " + this.active + " F: " + getFluidStringOrNone(this.tank.getFluid()) + " " + this.tank.getFluidAmount() + "/" + this.tank.getCapacity() + " Cs: " + this.attachedControllers.size() + " Vs: " + this.attachedValves.size() + " E: " + this.storedEnergy + "/" + MAX_ENERGY_STORAGE;
     }

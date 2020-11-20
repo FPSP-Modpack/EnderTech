@@ -1,6 +1,8 @@
 package io.endertech.multiblock.block;
 
-import cofh.api.block.IBlockAppearance;
+import java.util.ArrayList;
+import java.util.List;
+
 import cofh.api.block.IDismantleable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,7 +14,6 @@ import io.endertech.multiblock.tile.TileTankPart;
 import io.endertech.proxy.CommonProxy;
 import io.endertech.util.BlockCoord;
 import io.endertech.util.IOutlineDrawer;
-import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -26,10 +27,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
-import net.minecraftforge.common.util.ForgeDirection;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BlockMultiblockGlass extends BlockET implements ITileEntityProvider, IOutlineDrawer, IDismantleable
 {
@@ -112,12 +109,14 @@ public class BlockMultiblockGlass extends BlockET implements ITileEntityProvider
 
     // Custom connected textures rendering
 
-    public boolean isOpaqueCube()
+    @Override
+	public boolean isOpaqueCube()
     {
         return false;
     }
 
-    public boolean renderAsNormalBlock()
+    @Override
+	public boolean renderAsNormalBlock()
     {
         return false;
     }
@@ -155,7 +154,8 @@ public class BlockMultiblockGlass extends BlockET implements ITileEntityProvider
         return BlockTankPart.canDismantleTankBlock(player, world, x, y, z);
     }
 
-    public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
+    @Override
+	public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
     {
         return false;
     }

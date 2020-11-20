@@ -1,12 +1,13 @@
 package io.endertech.multiblock.rectangular;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import io.endertech.multiblock.MultiblockControllerBase;
 import io.endertech.multiblock.MultiblockTileEntityBase;
 import io.endertech.multiblock.MultiblockValidationException;
 import io.endertech.util.BlockCoord;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.HashSet;
-import java.util.Set;
 
 public abstract class RectangularMultiblockTileEntityBase extends MultiblockTileEntityBase
 {

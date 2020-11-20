@@ -1,5 +1,7 @@
 package io.endertech.client.handler;
 
+import org.lwjgl.opengl.GL11;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import io.endertech.config.GeneralConfig;
 import io.endertech.item.ItemExchanger;
@@ -12,7 +14,6 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import org.lwjgl.opengl.GL11;
 
 public class GUIEventHandler extends Gui
 {
@@ -77,7 +78,7 @@ public class GUIEventHandler extends Gui
         }
 
         String am = Integer.toString(this.lastExchangeSourceCount);
-        if (exchanger.isCreative(exchangerStack))
+        if (ItemExchanger.isCreative(exchangerStack))
         {
             am = LocalisationHelper.localiseString("gui.exchanger.radius.infinite");
         }

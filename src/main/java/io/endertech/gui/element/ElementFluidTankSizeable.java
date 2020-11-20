@@ -1,7 +1,6 @@
 package io.endertech.gui.element;
 
 import cofh.lib.gui.element.ElementFluidTank;
-import com.google.common.math.IntMath;
 import io.endertech.config.GeneralConfig;
 import io.endertech.gui.client.GuiETBase;
 import net.minecraftforge.fluids.Fluid;
@@ -46,8 +45,8 @@ public class ElementFluidTankSizeable extends ElementFluidTank
     @Override
     protected int getScaled()
     {
-        long fluidAmount = (long) tank.getFluidAmount();
-        long tankCapacity = (long) tank.getCapacity();
+        long fluidAmount = tank.getFluidAmount();
+        long tankCapacity = tank.getCapacity();
 
         long scaledY = (fluidAmount * sizeY) / tankCapacity;
         if (scaledY > sizeY) {

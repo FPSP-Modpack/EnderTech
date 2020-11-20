@@ -1,9 +1,10 @@
 package io.endertech.client.render;
 
-import net.minecraft.client.renderer.texture.IIconRegister;
-import net.minecraft.util.IIcon;
 import java.util.HashMap;
 import java.util.Map;
+
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.util.IIcon;
 
 // Inspired by CoFH's IconRegistry
 

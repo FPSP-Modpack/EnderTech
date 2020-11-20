@@ -1,9 +1,12 @@
 package io.endertech.item;
 
+import java.util.List;
+
 import cofh.api.energy.IEnergyContainerItem;
 import io.endertech.block.BlockChargePad;
 import io.endertech.block.ItemBlockBasic;
 import io.endertech.tile.TileChargePad;
+import io.endertech.tile.TilePad;
 import io.endertech.util.helper.KeyHelper;
 import io.endertech.util.helper.LocalisationHelper;
 import io.endertech.util.helper.StringHelper;
@@ -12,7 +15,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import java.util.List;
 
 public class ItemBlockChargePad extends ItemBlockBasic implements IEnergyContainerItem
 {
@@ -48,7 +50,7 @@ public class ItemBlockChargePad extends ItemBlockBasic implements IEnergyContain
         if (stack.stackTagCompound == null)
         {
             stack.setTagCompound(new NBTTagCompound());
-            TileChargePad.writeDefaultTag(stack.stackTagCompound);
+            TilePad.writeDefaultTag(stack.stackTagCompound);
         }
     }
 

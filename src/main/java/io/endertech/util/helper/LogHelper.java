@@ -1,9 +1,10 @@
 package io.endertech.util.helper;
 
-import io.endertech.reference.Reference;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import io.endertech.reference.Reference;
 
 public class LogHelper
 {

@@ -1,5 +1,8 @@
 package io.endertech.multiblock.block;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cofh.api.block.IDismantleable;
 import cofh.lib.util.helpers.ServerHelper;
 import cpw.mods.fml.relauncher.Side;
@@ -26,8 +29,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
-import java.util.ArrayList;
-import java.util.List;
 
 public class BlockTankController extends BlockET implements ITileEntityProvider, IOutlineDrawer, IDismantleable
 {
@@ -68,7 +69,8 @@ public class BlockTankController extends BlockET implements ITileEntityProvider,
         itemBlockTankController = new ItemStack(this, 1, CONTROLLER_METADATA_BASE);
     }
 
-    public int getRenderType()
+    @Override
+	public int getRenderType()
     {
         return -1;
     }
@@ -153,7 +155,8 @@ public class BlockTankController extends BlockET implements ITileEntityProvider,
         return BlockTankPart.canDismantleTankBlock(player, world, x, y, z);
     }
 
-    public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
+    @Override
+	public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
     {
         return false;
     }

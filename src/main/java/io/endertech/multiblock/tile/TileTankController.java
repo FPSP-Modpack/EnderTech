@@ -1,5 +1,7 @@
 package io.endertech.multiblock.tile;
 
+import java.util.Set;
+
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -12,7 +14,6 @@ import io.endertech.reference.Strings;
 import io.endertech.util.BlockCoord;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.Set;
 
 public class TileTankController extends TileTankPart
 {

@@ -1,5 +1,7 @@
 package io.endertech.block;
 
+import java.util.ArrayList;
+
 import cofh.lib.util.helpers.ServerHelper;
 import io.endertech.EnderTech;
 import io.endertech.tile.TileET;
@@ -15,7 +17,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.ArrayList;
 
 public class BlockET extends Block
 {

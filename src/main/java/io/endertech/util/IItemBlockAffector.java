@@ -1,9 +1,10 @@
 package io.endertech.util;
 
+import java.util.Set;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.Set;
 
 public interface IItemBlockAffector
 {

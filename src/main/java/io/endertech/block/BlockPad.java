@@ -1,5 +1,7 @@
 package io.endertech.block;
 
+import java.util.ArrayList;
+
 import cofh.api.block.IDismantleable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -23,7 +25,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.ArrayList;
 
 public abstract class BlockPad extends BlockET implements ITileEntityProvider, IDismantleable, IOutlineDrawer
 {
@@ -40,7 +41,8 @@ public abstract class BlockPad extends BlockET implements ITileEntityProvider, I
         return tile.isActive ? this.getActiveIcon(meta) : this.getInactiveIcon(meta);
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int meta)
     {
         ForgeDirection orientation = ForgeDirection.getOrientation(side);
@@ -51,7 +53,8 @@ public abstract class BlockPad extends BlockET implements ITileEntityProvider, I
         return this.getSideIcon(meta);
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public IIcon getIcon(IBlockAccess blockAccess, int x, int y, int z, int iSide)
     {
         TileEntity tileEntity = blockAccess.getTileEntity(x, y, z);
@@ -77,14 +80,14 @@ public abstract class BlockPad extends BlockET implements ITileEntityProvider, I
         {
             int direction = -1;
 
-            if (MathHelper.abs((float) entityLiving.posX - (float) x) < 2.0F && MathHelper.abs((float) entityLiving.posZ - (float) z) < 2.0F)
+            if (MathHelper.abs((float) entityLiving.posX - x) < 2.0F && MathHelper.abs((float) entityLiving.posZ - z) < 2.0F)
             {
-                double d0 = entityLiving.posY + 1.82D - (double) entityLiving.yOffset;
-                if (d0 - (double) y > 2.0D)
+                double d0 = entityLiving.posY + 1.82D - entityLiving.yOffset;
+                if (d0 - y > 2.0D)
                 {
                     direction = ForgeDirection.UP.ordinal();
                 }
-                if ((double) y - d0 > 0.0D)
+                if (y - d0 > 0.0D)
                 {
                     direction = ForgeDirection.DOWN.ordinal();
                 }
@@ -119,7 +122,8 @@ public abstract class BlockPad extends BlockET implements ITileEntityProvider, I
         return true;
     }
 
-    public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
+    @Override
+	public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
     {
         return false;
     }

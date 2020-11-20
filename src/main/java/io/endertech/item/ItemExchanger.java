@@ -1,9 +1,24 @@
 package io.endertech.item;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
 import io.endertech.config.ItemConfig;
 import io.endertech.handler.WorldEventHandler;
-import io.endertech.util.*;
-import io.endertech.util.helper.*;
+import io.endertech.util.BlockCoord;
+import io.endertech.util.Exchange;
+import io.endertech.util.Geometry;
+import io.endertech.util.IItemBlockAffector;
+import io.endertech.util.IOutlineDrawer;
+import io.endertech.util.Key;
+import io.endertech.util.RGBA;
+import io.endertech.util.helper.KeyHelper;
+import io.endertech.util.helper.LocalisationHelper;
+import io.endertech.util.helper.LogHelper;
+import io.endertech.util.helper.RenderHelper;
+import io.endertech.util.helper.StringHelper;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -13,12 +28,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
-import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
 
 public class ItemExchanger extends ItemExchangerBase implements IKeyHandler, IOutlineDrawer, IItemBlockAffector
 {

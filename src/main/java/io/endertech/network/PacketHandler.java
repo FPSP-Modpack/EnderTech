@@ -1,5 +1,11 @@
 package io.endertech.network;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.EnumMap;
+import java.util.LinkedList;
+import java.util.List;
+
 // Derived from CoFH's PacketHandler
 
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -23,7 +29,6 @@ import net.minecraft.network.NetHandlerPlayServer;
 import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-import java.util.*;
 
 @ChannelHandler.Sharable
 public class PacketHandler extends MessageToMessageCodec<FMLProxyPacket, PacketBase>

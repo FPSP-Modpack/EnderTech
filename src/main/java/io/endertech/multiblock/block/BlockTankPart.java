@@ -1,5 +1,10 @@
 package io.endertech.multiblock.block;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import cofh.api.block.IDismantleable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -31,10 +36,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 public class BlockTankPart extends BlockET implements ITileEntityProvider, IOutlineDrawer, IDismantleable
 {
@@ -358,7 +359,8 @@ public class BlockTankPart extends BlockET implements ITileEntityProvider, IOutl
         return canDismantleTankBlock(player, world, x, y, z);
     }
 
-    public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
+    @Override
+	public boolean canCreatureSpawn(EnumCreatureType type, IBlockAccess world, int x, int y, int z)
     {
         return false;
     }

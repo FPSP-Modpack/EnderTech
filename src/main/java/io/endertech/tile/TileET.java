@@ -1,5 +1,7 @@
 package io.endertech.tile;
 
+import java.util.List;
+
 import cofh.lib.util.helpers.ServerHelper;
 import cpw.mods.fml.relauncher.Side;
 import io.endertech.EnderTech;
@@ -15,7 +17,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.Packet;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.List;
 
 public class TileET extends TileEntity implements ITilePacketHandler, IETWailaProvider
 {

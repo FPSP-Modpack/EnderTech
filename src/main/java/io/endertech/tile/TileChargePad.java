@@ -1,5 +1,11 @@
 package io.endertech.tile;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
+import java.util.Set;
+
 import cofh.api.energy.IEnergyContainerItem;
 import cofh.lib.util.helpers.ServerHelper;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -23,7 +29,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.*;
 
 public class TileChargePad extends TilePad
 {
@@ -45,17 +50,20 @@ public class TileChargePad extends TilePad
         GameRegistry.registerTileEntity(TileChargePad.class, "tile." + Strings.Blocks.CHARGE_PAD);
     }
 
-    public int getMaxEnergyStored(int meta)
+    @Override
+	public int getMaxEnergyStored(int meta)
     {
         return CAPACITY[meta];
     }
 
-    public int getMaxReceiveRate(int meta)
+    @Override
+	public int getMaxReceiveRate(int meta)
     {
         return RECEIVE[meta];
     }
 
-    public int getMaxSendRate(int meta)
+    @Override
+	public int getMaxSendRate(int meta)
     {
         return SEND[meta];
     }
@@ -254,7 +262,8 @@ public class TileChargePad extends TilePad
         return currenttip;
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public void spawnParticles(int meta)
     {
         EffectRenderer er = FMLClientHandler.instance().getClient().effectRenderer;
@@ -279,20 +288,23 @@ public class TileChargePad extends TilePad
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public int getParticleMaxAge()
     {
         return 16;
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public double[] getParticleVelocity()
     {
         ForgeDirection orientation = this.getOrientation();
         return new double[] {orientation.offsetX * 0.15D, orientation.offsetY * 0.15D, orientation.offsetZ * 0.15D};
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public float[] getParticleColour(Random rand)
     {
         if (this.isItemInChargeSlotTuberous()) return getRainbowParticleColour(rand);
@@ -303,7 +315,8 @@ public class TileChargePad extends TilePad
         return new float[] {r, g, b};
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public int getParticleCount(int meta)
     {
         if (meta == 0) return 5;
@@ -311,7 +324,8 @@ public class TileChargePad extends TilePad
         else return 1;
     }
 
-    @SideOnly(Side.CLIENT)
+    @Override
+	@SideOnly(Side.CLIENT)
     public float getParticleSizeModifier(int meta)
     {
         if (meta == 0) return 2.0F;

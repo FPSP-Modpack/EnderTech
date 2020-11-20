@@ -18,7 +18,8 @@ public abstract class RectangularMultiblockControllerBase extends MultiblockCont
     /**
      * @return True if the machine is "whole" and should be assembled. False otherwise.
      */
-    protected void isMachineWhole() throws MultiblockValidationException
+    @Override
+	protected void isMachineWhole() throws MultiblockValidationException
     {
         //        LogHelper.info(connectedParts.size() + " blocks connected to multiblock");
         if (connectedParts.size() < getMinimumNumberOfBlocksForAssembledMachine())

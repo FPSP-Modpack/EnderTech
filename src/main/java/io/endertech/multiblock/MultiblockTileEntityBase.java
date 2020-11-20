@@ -1,5 +1,10 @@
 package io.endertech.multiblock;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import io.endertech.network.PacketETBase;
 import io.endertech.util.BlockCoord;
 import io.endertech.util.helper.LocalisationHelper;
@@ -7,10 +12,6 @@ import io.endertech.util.helper.LogHelper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.chunk.IChunkProvider;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 /**
  * Base logic class for Multiblock-connected tile entities. Most multiblock machines

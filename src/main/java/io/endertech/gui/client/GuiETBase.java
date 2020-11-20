@@ -1,5 +1,7 @@
 package io.endertech.gui.client;
 
+import org.lwjgl.opengl.GL11;
+
 import cofh.lib.gui.GuiBase;
 import cofh.lib.render.RenderHelper;
 import io.endertech.tile.TileET;
@@ -8,7 +10,6 @@ import net.minecraft.inventory.Container;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
-import org.lwjgl.opengl.GL11;
 
 // Contains overridden CoFHLib functions for more advanced fluid rendering in GUIs
 
@@ -102,4 +103,9 @@ public class GuiETBase extends GuiBase
         tessellator.addVertexWithUV(x + 0, y + 0, this.zLevel, minU, minV);
         tessellator.draw();
     }
+
+	@Override
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int x, int z) {
+		super.func_146976_a(partialTicks, x, z);
+	}
 }

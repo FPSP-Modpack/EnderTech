@@ -1,5 +1,7 @@
 package io.endertech.multiblock.renderer;
 
+import org.lwjgl.opengl.GL11;
+
 import io.endertech.block.ETBlocks;
 import io.endertech.config.GeneralConfig;
 import io.endertech.multiblock.block.BlockTankController;
@@ -19,7 +21,6 @@ import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
-import org.lwjgl.opengl.GL11;
 
 public class TankControllerRenderer extends TileEntitySpecialRenderer implements IItemRenderer
 {

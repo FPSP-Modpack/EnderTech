@@ -1,9 +1,10 @@
 package io.endertech.multiblock;
 
+import java.util.HashMap;
+
 import io.endertech.util.helper.LocalisationHelper;
 import io.endertech.util.helper.LogHelper;
 import net.minecraft.world.World;
-import java.util.HashMap;
 
 /**
  * This is a very static singleton registry class which directs incoming events to sub-objects, which

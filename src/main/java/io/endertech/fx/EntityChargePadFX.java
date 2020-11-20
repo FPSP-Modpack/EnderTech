@@ -43,9 +43,9 @@ public class EntityChargePadFX extends EntityFX
         this.motionZ = vz;
         float f = (float) (Math.random() + Math.random() + 1.0D) * 0.15F;
         float f1 = MathHelper.sqrt_double(this.motionX * this.motionX + this.motionY * this.motionY + this.motionZ * this.motionZ);
-        this.motionX = this.motionX / (double) f1 * (double) f * 0.4D;
-        this.motionY = this.motionY / (double) f1 * (double) f * 0.4D;
-        this.motionZ = this.motionZ / (double) f1 * (double) f * 0.4D;
+        this.motionX = this.motionX / f1 * f * 0.4D;
+        this.motionY = this.motionY / f1 * f * 0.4D;
+        this.motionZ = this.motionZ / f1 * f * 0.4D;
     }
 
     @Override

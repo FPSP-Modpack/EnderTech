@@ -1,5 +1,7 @@
 package io.endertech.integration.waila;
 
+import java.util.List;
+
 import io.endertech.tile.TileET;
 import io.endertech.util.IETWailaProvider;
 import mcp.mobius.waila.api.IWailaConfigHandler;
@@ -11,8 +13,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class GenericWailaProvider implements IWailaDataProvider
 {

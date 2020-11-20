@@ -1,5 +1,11 @@
 package io.endertech.client.handler;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+import org.lwjgl.input.Keyboard;
+
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -12,10 +18,6 @@ import io.endertech.util.helper.LogHelper;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import org.lwjgl.input.Keyboard;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 public class KeyBindingHandler
 {

@@ -1,5 +1,7 @@
 package io.endertech.integration.waila;
 
+import java.util.List;
+
 import io.endertech.multiblock.IMultiblockPart;
 import io.endertech.multiblock.MultiblockControllerBase;
 import io.endertech.multiblock.MultiblockTileEntityBase;
@@ -14,8 +16,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class MultiblockWailaProvider implements IWailaDataProvider
 {

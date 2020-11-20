@@ -1,9 +1,10 @@
 package io.endertech.item;
 
+import java.util.Set;
+
 import io.endertech.util.Key;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import java.util.Set;
 
 public interface IKeyHandler
 {

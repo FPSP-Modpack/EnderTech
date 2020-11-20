@@ -1,5 +1,10 @@
 package io.endertech.multiblock;
 
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 import io.endertech.network.ITilePacketHandler;
 import io.endertech.network.PacketETBase;
 import io.endertech.network.PacketHandler;
@@ -13,10 +18,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
 
 /**
  * This class contains the base logic for "multiblock controllers". Conceptually, they are
@@ -389,7 +390,7 @@ public abstract class MultiblockControllerBase implements IOutlineDrawer, ITileP
             part.onMachineAssembled(this);
         }
 
-        if (oldState == assemblyState.Paused)
+        if (oldState == AssemblyState.Paused)
         {
             onMachineRestored();
         } else
@@ -1001,7 +1002,8 @@ public abstract class MultiblockControllerBase implements IOutlineDrawer, ITileP
 
     public abstract List<String> getWailaBody();
 
-    public boolean drawOutline(DrawBlockHighlightEvent event)
+    @Override
+	public boolean drawOutline(DrawBlockHighlightEvent event)
     {
         return false;
     }

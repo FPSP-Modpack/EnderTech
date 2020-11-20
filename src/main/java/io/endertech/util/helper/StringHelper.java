@@ -1,8 +1,9 @@
 package io.endertech.util.helper;
 
+import java.text.DecimalFormat;
+
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fluids.FluidStack;
-import java.text.DecimalFormat;
 
 public class StringHelper
 {

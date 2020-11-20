@@ -1,7 +1,8 @@
 package io.endertech.util.helper;
 
-import net.minecraft.client.gui.FontRenderer;
 import org.lwjgl.opengl.GL11;
+
+import net.minecraft.client.gui.FontRenderer;
 
 public class FontHelper
 {

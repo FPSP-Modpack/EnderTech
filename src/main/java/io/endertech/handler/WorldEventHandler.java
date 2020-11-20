@@ -1,5 +1,12 @@
 package io.endertech.handler;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import io.endertech.config.ItemConfig;
@@ -16,7 +23,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.common.util.ForgeDirection;
-import java.util.*;
 
 public class WorldEventHandler
 {
@@ -31,7 +37,7 @@ public class WorldEventHandler
         }
 
         int dimensionId = world.provider.dimensionId;
-        Set<Exchange> queue = (LinkedHashSet) exchanges.get(dimensionId);
+        Set<Exchange> queue = exchanges.get(dimensionId);
 
         if (queue == null)
         {

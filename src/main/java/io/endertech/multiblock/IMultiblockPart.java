@@ -1,10 +1,11 @@
 package io.endertech.multiblock;
 
+import java.util.Set;
+
 import io.endertech.network.PacketETBase;
 import io.endertech.tile.TileET;
 import io.endertech.util.BlockCoord;
 import net.minecraft.nbt.NBTTagCompound;
-import java.util.Set;
 
 /**
  * Basic interface for a multiblock machine part. This is defined as an abstract class

@@ -1,9 +1,9 @@
 package io.endertech.util.inventory;
 
+import java.util.List;
+
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
-import java.util.ArrayList;
-import java.util.List;
 
 public class InventoryHelper
 {

@@ -1,9 +1,10 @@
 package io.endertech.util;
 
-import net.minecraft.util.Vec3;
-import net.minecraftforge.common.util.ForgeDirection;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import net.minecraft.util.Vec3;
+import net.minecraftforge.common.util.ForgeDirection;
 
 public class Geometry
 {

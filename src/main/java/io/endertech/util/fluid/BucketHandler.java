@@ -1,9 +1,13 @@
 package io.endertech.util.fluid;
 
-import cofh.lib.util.BlockWrapper;
-import cofh.lib.util.helpers.ServerHelper;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
+
+import cofh.lib.util.BlockWrapper;
+import cofh.lib.util.helpers.ServerHelper;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
@@ -21,8 +25,6 @@ import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.IFluidBlock;
-import java.util.Map;
-import java.util.Map.Entry;
 
 // Derived from CoFHCore's BucketHandler
 

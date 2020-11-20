@@ -1,5 +1,7 @@
 package io.endertech.multiblock.renderer;
 
+import org.lwjgl.opengl.GL11;
+
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import io.endertech.multiblock.texture.ConnectedTextureIcon;
 import io.endertech.proxy.CommonProxy;
@@ -8,7 +10,6 @@ import net.minecraft.client.renderer.RenderBlocks;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
-import org.lwjgl.opengl.GL11;
 
 public class ConnectedTextureRenderer implements ISimpleBlockRenderingHandler
 {
@@ -78,13 +79,13 @@ public class ConnectedTextureRenderer implements ISimpleBlockRenderingHandler
     @Override
     public boolean renderWorldBlock(IBlockAccess world, int x, int y, int z, Block block, int modelId, RenderBlocks renderer)
     {
-        this.connectedRenderer.setBlockAccess(world);
-        this.connectedRenderer.setBlockToCompareTo(world.getBlock(x, y, z), world.getBlockMetadata(x, y, z));
+        ConnectedTextureRenderer.connectedRenderer.setBlockAccess(world);
+        ConnectedTextureRenderer.connectedRenderer.setBlockToCompareTo(world.getBlock(x, y, z), world.getBlockMetadata(x, y, z));
 
-        block.setBlockBoundsBasedOnState(this.connectedRenderer.blockAccess, x, y, z);
-        this.connectedRenderer.setRenderBoundsFromBlock(block);
+        block.setBlockBoundsBasedOnState(ConnectedTextureRenderer.connectedRenderer.blockAccess, x, y, z);
+        ConnectedTextureRenderer.connectedRenderer.setRenderBoundsFromBlock(block);
 
-        return this.connectedRenderer.renderStandardBlock(block, x, y, z);
+        return ConnectedTextureRenderer.connectedRenderer.renderStandardBlock(block, x, y, z);
     }
 
     @Override

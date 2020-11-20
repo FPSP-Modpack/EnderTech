@@ -11,7 +11,8 @@ public class PacketKeyPressed extends PacketETBase
         PacketHandler.instance.registerPacket(PacketKeyPressed.class);
     }
 
-    public void handlePacket(EntityPlayer entityPlayer, boolean isServer)
+    @Override
+	public void handlePacket(EntityPlayer entityPlayer, boolean isServer)
     {
         if (entityPlayer.getCurrentEquippedItem() != null && entityPlayer.getCurrentEquippedItem().getItem() instanceof IKeyHandler)
         {

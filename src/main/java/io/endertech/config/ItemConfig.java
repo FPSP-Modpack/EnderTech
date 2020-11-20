@@ -1,9 +1,10 @@
 package io.endertech.config;
 
+import java.io.File;
+
 import io.endertech.util.helper.LocalisationHelper;
 import io.endertech.util.helper.LogHelper;
 import net.minecraftforge.common.config.Configuration;
-import java.io.File;
 
 public class ItemConfig
 {
