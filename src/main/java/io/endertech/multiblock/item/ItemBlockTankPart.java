@@ -1,9 +1,12 @@
 package io.endertech.multiblock.item;
 
+import java.util.List;
+
 import io.endertech.block.ETBlocks;
 import io.endertech.block.ItemBlockBasic;
 import io.endertech.multiblock.block.BlockTankPart;
 import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
 public class ItemBlockTankPart extends ItemBlockBasic
@@ -31,5 +34,12 @@ public class ItemBlockTankPart extends ItemBlockBasic
         else if (BlockTankPart.isEnergyInput(damage)) meta = 2;
 
         return ETBlocks.blockTankPart.getUnlocalizedName() + "." + meta;
+    }
+    
+    @Override
+    public void addInformation(ItemStack itemstack, EntityPlayer player, List tooltip, boolean p_77624_4_) {
+    	tooltip.add("Min Size: 3x3x3");
+    	tooltip.add("Max Size: 9x9x9");
+    	super.addInformation(itemstack, player, tooltip, p_77624_4_);
     }
 }

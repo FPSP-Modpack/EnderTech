@@ -3,6 +3,8 @@ package io.endertech.block;
 import cpw.mods.fml.common.registry.GameRegistry;
 import io.endertech.item.ItemBlockChargePad;
 import io.endertech.item.ItemBlockHealthPad;
+import io.endertech.item.ItemBlockTankController;
+import io.endertech.item.ItemBlockTankGlass;
 import io.endertech.multiblock.block.BlockMultiblockGlass;
 import io.endertech.multiblock.block.BlockTankController;
 import io.endertech.multiblock.block.BlockTankPart;
@@ -27,8 +29,8 @@ public class ETBlocks
         blockHealthPad = new BlockHealthPad();
 
         GameRegistry.registerBlock(blockTankPart, ItemBlockTankPart.class, "endertech." + Strings.Blocks.TANK_PART_NAME);
-        GameRegistry.registerBlock(blockMultiblockGlass, ItemBlockBasic.class, "endertech." + Strings.Blocks.MULTIBLOCK_GLASS_NAME);
-        GameRegistry.registerBlock(blockTankController, ItemBlockBasic.class, "endertech." + Strings.Blocks.TANK_CONTROLLER_NAME);
+        GameRegistry.registerBlock(blockMultiblockGlass, ItemBlockTankGlass.class, "endertech." + Strings.Blocks.MULTIBLOCK_GLASS_NAME);
+        GameRegistry.registerBlock(blockTankController, ItemBlockTankController.class, "endertech." + Strings.Blocks.TANK_CONTROLLER_NAME);
         GameRegistry.registerBlock(blockChargePad, ItemBlockChargePad.class, Strings.Blocks.CHARGE_PAD);
         GameRegistry.registerBlock(blockHealthPad, ItemBlockHealthPad.class, Strings.Blocks.HEALTH_PAD);
 
