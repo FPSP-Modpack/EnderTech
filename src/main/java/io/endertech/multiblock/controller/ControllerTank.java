@@ -188,7 +188,7 @@ public class ControllerTank extends RectangularMultiblockControllerBase implemen
 
         BlockCoord minCoord = this.getMinimumCoord();
         BlockCoord maxCoord = this.getMaximumCoord();
-        BlockCoord dimensionCoord = new BlockCoord(maxCoord.x - minCoord.x - 1, maxCoord.y - minCoord.y - 1, maxCoord.z - minCoord.z - 1);
+        BlockCoord dimensionCoord = new BlockCoord(maxCoord.x - minCoord.x, maxCoord.y - minCoord.y, maxCoord.z - minCoord.z);
 
         int interiorSize = dimensionCoord.x * dimensionCoord.y * dimensionCoord.z;
         int internalCapacity = interiorSize * FluidContainerRegistry.BUCKET_VOLUME;
@@ -263,28 +263,19 @@ public class ControllerTank extends RectangularMultiblockControllerBase implemen
     }
 
     @Override
-    protected int getMaximumXSize()
-    {
-        return 8;
-    }
+    protected int getMaximumXSize() { return 9; }
 
     @Override
     protected int getMinimumXSize() { return 3; }
 
     @Override
-    protected int getMaximumZSize()
-    {
-        return 8;
-    }
+    protected int getMaximumZSize() { return 9; }
 
     @Override
     protected int getMinimumZSize() { return 3; }
 
     @Override
-    protected int getMaximumYSize()
-    {
-        return 10;
-    }
+    protected int getMaximumYSize() { return 9; }
 
     @Override
     protected int getMinimumYSize() { return 3; }
