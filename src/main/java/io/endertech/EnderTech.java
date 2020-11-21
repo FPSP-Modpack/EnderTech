@@ -7,7 +7,6 @@ import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
@@ -46,7 +45,7 @@ import net.minecraft.launchwrapper.Launch;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, certificateFingerprint = Reference.FINGERPRINT, dependencies = "after:ThermalExpansion@[1.7.10R4.0.0B1,)")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION_NUMBER, dependencies = "after:ThermalExpansion@[1.7.10R4.0.0B1,)")
 public class EnderTech
 {
     public static final CreativeTabs tabET = new CreativeTabET();
@@ -58,19 +57,6 @@ public class EnderTech
     public static CommonProxy proxy;
     public static boolean loadDevModeContent = false;
     public static Item capacitor;
-
-    @EventHandler
-    @SuppressWarnings("unused")
-    public void invalidFingerprint(FMLFingerprintViolationEvent event)
-    {
-        if (Reference.FINGERPRINT.equals("@FINGERPRINT@"))
-        {
-            LogHelper.warn(LocalisationHelper.localiseString("warning.fingerprint.missing"));
-        } else
-        {
-            LogHelper.fatal(LocalisationHelper.localiseString("error.fingerprint.tampered"));
-        }
-    }
 
     @EventHandler
     @SuppressWarnings("unused")

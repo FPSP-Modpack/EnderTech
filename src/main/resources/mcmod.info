@@ -1,6 +1,6 @@
 [{
     "modid": "EnderTech",
-    "name": "EnderTech",
+    "name": "EnderTech FPSP Edition",
     "description": "Ender themed technological expansion.",
     "version": "${version}",
     "mcversion": "${mcversion}",
